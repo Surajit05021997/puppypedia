@@ -1,6 +1,6 @@
 # puppypedia
 
-This template should help get you started developing with Vue 3 in Vite.
+Welcome to Puppypedia🐶 - Your Canine Companion Hub!
 
 ## Recommended IDE Setup
 
