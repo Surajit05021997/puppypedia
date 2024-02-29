@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*:root is equivalent to html element. Only it's specificity is higher.*/
+:root {
+  --clr-primary-600: #FFE6E6;
+  --clr-primary-700: #E1AFD1;
+  --clr-primary-800: #AD88C6;
+  --clr-primary-900: #7469B6;
+
+  --clr-neutral-100: #FFFFFF;
+  --clr-neutral-800: #171717;
+  --clr-neutral-900: #000000;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+}
+
+/*css reset*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Poppins, san-serif;
+  font-weight: var(--fw-regular);
+  font-size: 1.125rem;
+  line-height: 1.5; /*1.5 times of elements font size*/
+}
+
+input, select, textarea {
+  font-family: Poppins, san-serif;
+  font-weight: var(--fw-regular);
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+img, picture, svg, canvas, video {
+  display: block;
+  max-width: 100%;
+}
+
