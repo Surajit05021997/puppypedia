@@ -48,3 +48,7 @@ img, picture, svg, canvas, video {
   max-width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
