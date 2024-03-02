@@ -1,9 +1,17 @@
 <template>
   <router-link class="logo" to="/">
-    <img src="@/assets/icons/puppypedia_logo.svg" alt="Puppypedia Logo" class="logo-img">
+    <img src="@/assets/icons/puppypedia_logo.svg" alt="Puppypedia Logo" class="logo-img" @click="$emit('collapse-menu')">
     <span class="logo-text">Puppypedia</span>
   </router-link>
 </template>
+
+<script setup>
+import { computed } from 'vue';
+
+const windowWidth = computed(() => {
+  return window.screen.width;
+});
+</script>
 
 <style scoped>
 .logo {
@@ -12,21 +20,29 @@
   gap: 8px;
 }
 
-.logo-img {
-  height: 64px;
-}
-
-.logo {
-  font-size: 32px;
-  font-weight: var(--fw-bold);
-  color: var(--clr-primary-600);
-}
-
 .logo:active {
   color: var(--clr-primary-600);
 }
 
 .logo:hover {
   color: var(--clr-primary-600);
+}
+
+.logo-img {
+  height: 64px;
+}
+
+.logo-text {
+  font-size: 32px;
+  font-weight: var(--fw-bold);
+  color: var(--clr-primary-600);
+  display: none;
+}
+
+
+@media (min-width: 992px) {
+  .logo-text {
+    display: inline;
+  }
 }
 </style>

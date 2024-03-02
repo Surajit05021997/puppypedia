@@ -2,7 +2,7 @@
   <nav>
     <ul>
       <li v-for="item in navItems" :key="item.linkText">
-        <router-link :to="{name: item.component}" class="nav-link">{{ item.linkText }}</router-link>
+        <router-link :to="{name: item.component}" class="nav-link" @click="$emit('collapse-menu')">{{ item.linkText }}</router-link>
       </li>
     </ul>
   </nav>
@@ -36,7 +36,9 @@ const navItems = [
 <style scoped>
 ul {
   display: flex;
-  gap: 32px;
+  flex-direction: column;
+  align-items: end;
+  gap: 24px;
 }
 
 li {
@@ -64,5 +66,18 @@ li {
 .nav-link:active {
   color: var(--clr-primary-600);
   background-color: var(--clr-primary-700);
+}
+
+@media (min-width: 768px) {
+  ul {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (min-width: 992px) {
+  ul {
+    gap: 32px;
+  }
 }
 </style>
