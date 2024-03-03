@@ -10,4 +10,7 @@ import AppHeader from '@/components/AppHeader.vue';
 </script>
 
 <style scoped>
+.container {
+  padding: 16px 24px;
+}
 </style>
