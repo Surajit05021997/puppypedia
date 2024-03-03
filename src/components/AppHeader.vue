@@ -1,11 +1,23 @@
 <template>
   <header :class="expandedMenu">
     <div class="container">
-      <AppLogo @collapse-menu="expandedMenu['expanded-menu'] = false" />
+      <AppLogo @collapse-menu="expandedMenu['expanded-menu']=false" />
       <div class="nav-container">
-        <img v-if="!expandedMenu['expanded-menu']" src="@/assets/icons/burger-menu.svg" alt="Menu Icon" class="burger-menu-icon" @click="toggleMenu">
-        <img v-else src="@/assets/icons/cross.svg" alt="Cross Icon" class="cross-icon" @click="toggleMenu">
-        <AppNavbar class="navbar" :class="expandedMenu" @collapse-menu="expandedMenu['expanded-menu'] = false" />
+        <img
+          v-if="!expandedMenu['expanded-menu']"
+          src="@/assets/icons/burger-menu.svg"
+          alt="Menu Icon"
+          class="burger-menu-icon"
+          @click="toggleMenu"
+        >
+        <img
+          v-else
+          src="@/assets/icons/cross.svg"
+          alt="Cross Icon"
+          class="cross-icon"
+          @click="toggleMenu"
+        >
+        <AppNavbar class="navbar" :class="expandedMenu" @collapse-menu="expandedMenu['expanded-menu']=false" />
       </div>
     </div>
   </header>

@@ -1,6 +1,11 @@
 <template>
   <router-link class="logo" to="/">
-    <img src="@/assets/icons/puppypedia_logo.svg" alt="Puppypedia Logo" class="logo-img" @click="$emit('collapse-menu')">
+    <img
+      src="@/assets/icons/puppypedia_logo.svg"
+      alt="Puppypedia Logo"
+      class="logo-img"
+      @click="$emit('collapse-menu')"
+    >
     <span class="logo-text">Puppypedia</span>
   </router-link>
 </template>

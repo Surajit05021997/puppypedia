@@ -2,7 +2,13 @@
   <nav>
     <ul>
       <li v-for="item in navItems" :key="item.linkText">
-        <router-link :to="{name: item.component}" class="nav-link" @click="$emit('collapse-menu')">{{ item.linkText }}</router-link>
+        <router-link
+          :to="{name: item.component}"
+          class="nav-link"
+          @click="$emit('collapse-menu')"
+        >
+          {{ item.linkText }}
+        </router-link>
       </li>
     </ul>
   </nav>
