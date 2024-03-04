@@ -1,8 +1,8 @@
 import Home from '@/views/AppHome.vue';
-import PupBreeds from '@/views/PupBreeds.vue';
-import PupHealth from '@/views/PupHealth.vue';
-import PupTraining from '@/views/PupTraining.vue';
-import PupLifestyle from '@/views/PupLifestyle.vue';
+import Breeds from '@/views/Breeds.vue';
+import Health from '@/views/Health.vue';
+import Training from '@/views/Training.vue';
+import Lifestyle from '@/views/Lifestyle.vue';
 import AboutUs from '@/views/AboutUs.vue';
 
 const routes = [
@@ -12,24 +12,24 @@ const routes = [
     component: Home,
   },
   {
-    name: 'pupBreeds',
-    path: '/pup-breeds',
-    component: PupBreeds,
+    name: 'breeds',
+    path: '/breeds',
+    component: Breeds,
   },
   {
-    name: 'pupHealth',
-    path: '/pup-health',
-    component: PupHealth,
+    name: 'health',
+    path: '/health',
+    component: Health,
   },
   {
-    name: 'pupTraining',
-    path: '/pup-training',
-    component: PupTraining,
+    name: 'training',
+    path: '/training',
+    component: Training,
   },
   {
-    name: 'pupLifestyle',
-    path: '/pup-lifestyle',
-    component: PupLifestyle,
+    name: 'lifestyle',
+    path: '/lifestyle',
+    component: Lifestyle,
   },
   {
     name: 'aboutUs',

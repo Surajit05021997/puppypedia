@@ -18,19 +18,19 @@
 const navItems = [
   {
     linkText: 'Breeds',
-    component: 'pupBreeds',
+    component: 'breeds',
   },
   {
     linkText: 'Health',
-    component: 'pupHealth',
+    component: 'health',
   },
   {
     linkText: 'Training',
-    component: 'pupTraining',
+    component: 'training',
   },
   {
     linkText: 'Lifestyle',
-    component: 'pupLifestyle',
+    component: 'lifestyle',
   },
   {
     linkText: 'About Us',
