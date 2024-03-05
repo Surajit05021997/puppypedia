@@ -1,7 +1,10 @@
 <template>
   <h1>Breeds</h1>
+  <SearchBar />
+  <BreedTile />
 </template>
 
 <script setup>
-import PopularDogsSlider from '@/components/PopularDogsSlider.vue';
+import SearchBar from '@/components/SearchBar.vue';
+import BreedTile from '@/components/BreedTile.vue';
 </script>

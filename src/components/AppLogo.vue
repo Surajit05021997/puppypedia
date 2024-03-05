@@ -11,11 +11,6 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
-
-const windowWidth = computed(() => {
-  return window.screen.width;
-});
 </script>
 
 <style scoped>

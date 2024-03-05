@@ -39,7 +39,7 @@ body {
 input, select, textarea {
   font-family: Poppins, san-serif;
   font-weight: var(--fw-regular);
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1.5;
 }
 
