@@ -2,7 +2,7 @@
   <section class="popular-dogs-slider">
     <div class="dog-card" v-for="dog in popularDogs">
       <img class="dog-category-image" :src="dog.imgSrc" alt="Dog Image">
-      <div class="overlay">
+      <div class="overlay" @click="">
         <span>
           {{ dog.breed }}
         </span>

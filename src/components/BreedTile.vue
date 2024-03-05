@@ -1,27 +1,28 @@
 <template>
   <section class="breed-tile">
-    <img :src="breedImageSrc" alt="Breed Image" class="breed-image">
-    <div>
-      <StatBar stat-name="Energy" :stat-value="breedDetails?.energy ? breedDetails.energy : 0" />
-      <StatBar stat-name="Shedding " :stat-value="breedDetails?.shedding ? breedDetails.shedding : 0" />
-      <StatBar stat-name="Barking" :stat-value="breedDetails?.barking ? breedDetails.barking : 0" />
-      <StatBar stat-name="Trainability" :stat-value="breedDetails?.trainability ? breedDetails.trainability : 0" />
-      <StatBar stat-name="Protectiveness" :stat-value="breedDetails?.protectiveness ? breedDetails.protectiveness : 0" />
+    <img :src="props.breedDetails.image_link" alt="Breed Image" class="breed-image">
+    <div class="stats-container">
+      <span class="breed-name">{{ props.breedDetails.name }}</span>
+      <div class="stats">
+        <StatBar stat-name="Energy" :stat-value="props.breedDetails.energy" />
+        <StatBar stat-name="Shedding " :stat-value="props.breedDetails.shedding" />
+        <StatBar stat-name="Barking" :stat-value="props.breedDetails.barking" />
+        <StatBar stat-name="Trainability" :stat-value="props.breedDetails.trainability" />
+        <StatBar stat-name="Protectiveness" :stat-value="props.breedDetails.protectiveness" />
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { computed } from 'vue';
-import { storeToRefs } from 'pinia';
-import { useBreedStore } from '@/store/breedStore';
+import { defineProps } from 'vue';
 import StatBar from '@/components/StatBar.vue';
 
-const breedStore = useBreedStore();
-const { breedDetails } = storeToRefs(breedStore);
-
-const breedImageSrc = computed(() => {
-  return breedDetails.value?.image_link ? breedDetails.value.image_link : 'src/assets/images/breed-template-image.svg';
+const props = defineProps({
+  breedDetails: {
+    type: Object,
+    required: true,
+  }
 });
 </script>
 
@@ -31,14 +32,30 @@ const breedImageSrc = computed(() => {
   border-radius: 8px;
   background-color: var(--clr-primary-900);
   padding: 16px;
-  margin-block: 16px;
+  margin-block: 24px;
   display: flex;
   gap: 24px;
-  align-items: center;
+  align-items: start;
+}
+
+.stats-container {
+  flex-grow: 1;
 }
 
 .breed-image {
   border-radius: 8px;
   height: 20rem;
+}
+
+.breed-name {
+  font-size: 1.5rem;
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-primary-600);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 </style>

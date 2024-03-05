@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { defineProps, watch, ref, onMounted } from 'vue';
+import { defineProps, ref, onMounted } from 'vue';
 
 const sliderBar = ref(null);
 
@@ -24,18 +24,16 @@ const props = defineProps({
 });
 
 onMounted(() => {
-  sliderBar.value.style.width = (150 * props.statValue) + 'px';
-});
-
-watch(() => props.statValue, (newValue) => {
-  sliderBar.value.style.width = (150 * newValue) + 'px';
+  sliderBar.value.style.width = (80 * props.statValue) + 'px';
 });
 </script>
 
 <style scoped>
+.stat-bar {
+}
 .slider {
   display: flex;
-  width: 750px;
+  /* width: 750px; */
   border-radius: 24px;
   overflow: hidden;
   border: 2px solid var(--clr-primary-600);

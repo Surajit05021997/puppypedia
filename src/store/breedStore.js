@@ -5,13 +5,13 @@ import {
 
 const useBreedStore = defineStore('breed', {
   state: () => ({
-    breedDetails: null,
+    subBreedList: null,
   }),
   actions: {
     async getBreedDetailsAction(breedName) {
       const response = await getBreedDetailsService(breedName);
-      this.breedDetails = response.data[0];
-      console.log(this.breedDetails);
+      this.subBreedList = response.data;
+      console.log(this.subBreedList);
     },
   }
 });
