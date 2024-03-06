@@ -5,7 +5,7 @@
       <span class="breed-name">{{ props.breedDetails.name }}</span>
       <div class="stats">
         <StatBar stat-name="Energy" :stat-value="props.breedDetails.energy" />
-        <StatBar stat-name="Shedding " :stat-value="props.breedDetails.shedding" />
+        <StatBar stat-name="Shedding" :stat-value="props.breedDetails.shedding" />
         <StatBar stat-name="Barking" :stat-value="props.breedDetails.barking" />
         <StatBar stat-name="Trainability" :stat-value="props.breedDetails.trainability" />
         <StatBar stat-name="Protectiveness" :stat-value="props.breedDetails.protectiveness" />
