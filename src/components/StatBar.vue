@@ -33,7 +33,6 @@ onMounted(() => {
 }
 .slider {
   display: flex;
-  /* width: 750px; */
   border-radius: 24px;
   overflow: hidden;
   border: 2px solid var(--clr-primary-600);

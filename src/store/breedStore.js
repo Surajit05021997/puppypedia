@@ -6,12 +6,21 @@ import {
 const useBreedStore = defineStore('breed', {
   state: () => ({
     subBreedList: null,
+    isBreedLoading: false,
+    breedError: null,
   }),
   actions: {
     async getBreedDetailsAction(breedName) {
-      const response = await getBreedDetailsService(breedName);
-      this.subBreedList = response.data;
-      console.log(this.subBreedList);
+      try {
+        this.isBreedLoading = true;
+        const response = await getBreedDetailsService(breedName);
+        this.subBreedList = response.data;
+        console.log(this.subBreedList);
+      } catch(error) {
+        this.breedError = error;
+      } finally {
+        this.isBreedLoading = false;
+      }
     },
   }
 });

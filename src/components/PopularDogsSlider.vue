@@ -1,8 +1,8 @@
 <template>
   <section class="popular-dogs-slider">
-    <div class="dog-card" v-for="dog in popularDogs">
+    <div class="dog-card" v-for="dog in popularDogs" :key="dog.breed">
       <img class="dog-category-image" :src="dog.imgSrc" alt="Dog Image">
-      <div class="overlay" @click="">
+      <div class="overlay" @click="handlePopularBreedClick(dog.breed)">
         <span>
           {{ dog.breed }}
         </span>
@@ -12,6 +12,12 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router';
+import { useBreedStore } from '@/store/breedStore';
+
+const router = useRouter();
+const breedStore = useBreedStore();
+
 const popularDogs = [
   {
     breed: 'Labrador Retriever',
@@ -34,6 +40,11 @@ const popularDogs = [
     imgSrc: 'src/assets/images/beagle.jpg'
   },
 ];
+
+function handlePopularBreedClick(dogBreed) {
+  breedStore.getBreedDetailsAction(dogBreed);
+  router.push('/breeds');
+}
 </script>
 
 <style scoped>

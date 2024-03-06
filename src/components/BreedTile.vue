@@ -32,7 +32,6 @@ const props = defineProps({
   border-radius: 8px;
   background-color: var(--clr-primary-900);
   padding: 16px;
-  margin-block: 24px;
   display: flex;
   gap: 24px;
   align-items: start;
