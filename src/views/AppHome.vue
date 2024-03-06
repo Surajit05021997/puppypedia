@@ -12,6 +12,8 @@ import { useFactsStore } from '@/store/factsStore';
 
 const factsStore = useFactsStore();
 onMounted(() => {
-  factsStore.getRandomFactsAction();
+  if(!factsStore.fact) {
+    factsStore.getRandomFactsAction(1);
+  }
 });
 </script>

@@ -9,8 +9,8 @@ function getBreedDetailsService(breedName) {
   return axiosInstnace.get(`/v1/dogs?name=${breedName}`);
 }
 
-function getRandomFactsService() {
-  return axios.get('https://dog-api.kinduff.com/api/facts');
+function getRandomFactsService(noOfFacts) {
+  return axios.get(`https://dog-api.kinduff.com/api/facts?number=${noOfFacts}`);
 }
 
 export { getBreedDetailsService, getRandomFactsService };
