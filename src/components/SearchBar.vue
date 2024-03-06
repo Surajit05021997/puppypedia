@@ -1,7 +1,7 @@
 <template>
   <div class="search-container">
-    <input type="text" class="search-bar" v-model="searchInput">
-    <div class="search-icon-container" @click="breedStore.getBreedDetailsAction(searchInput)">
+    <input type="text" class="search-bar" v-model.trim="searchInput">
+    <div class="search-icon-container" @click="handleBreedSearch">
       <img src="@/assets/icons/search.svg" alt="Search Icon" class="seach-icon">
     </div>
   </div>
@@ -14,6 +14,12 @@ import  { useBreedStore } from '@/store/breedStore.js';
 let searchInput = ref('');
 
 const breedStore = useBreedStore();
+
+function handleBreedSearch() {
+  if(searchInput.value) {
+    breedStore.getBreedDetailsAction(searchInput.value);
+  }
+}
 </script>
 
 <style scoped>

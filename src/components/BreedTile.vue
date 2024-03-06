@@ -28,7 +28,6 @@ const props = defineProps({
 
 <style scoped>
 .breed-tile {
-  padding: 2rem 0;
   border-radius: 8px;
   background-color: var(--clr-primary-900);
   padding: 16px;
@@ -53,8 +52,8 @@ const props = defineProps({
 }
 
 .stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 </style>
