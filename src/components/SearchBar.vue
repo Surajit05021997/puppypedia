@@ -1,6 +1,6 @@
 <template>
   <div class="search-container">
-    <input type="text" class="search-bar" v-model.trim="searchInput">
+    <input type="text" class="search-bar" v-model.trim="searchInput" @keyup.enter="handleBreedSearch">
     <div class="search-icon-container" @click="handleBreedSearch">
       <img src="@/assets/icons/search.svg" alt="Search Icon" class="seach-icon">
     </div>
