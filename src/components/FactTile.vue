@@ -62,12 +62,13 @@ button:hover {
 li {
   list-style: none;
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 4px;
   margin-block: 8px;
 }
 
 .list-style {
   width: 24px;
+  padding-top: 2px;
 }
 </style>
