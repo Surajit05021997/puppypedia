@@ -4,6 +4,7 @@ import Health from '@/views/Health.vue';
 import Training from '@/views/Training.vue';
 import Lifestyle from '@/views/Lifestyle.vue';
 import AboutUs from '@/views/AboutUs.vue';
+import NotFoundPage from '@/views/NotFoundPage.vue';
 
 const routes = [
   {
@@ -35,6 +36,11 @@ const routes = [
     name: 'aboutUs',
     path: '/about-us',
     component: AboutUs,
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFoundPage,
   },
 ];
 
