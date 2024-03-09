@@ -1,20 +1,26 @@
 <template>
-  <section class="popular-dogs-slider">
-    <div class="dog-card" v-for="dog in popularDogs" :key="dog.breed">
-      <img class="dog-category-image" :src="dog.imgSrc" alt="Dog Image">
-      <div class="overlay" @click="handlePopularBreedClick(dog.breed)">
-        <span>
-          {{ dog.breed }}
-        </span>
+  <div class="popular-dogs-slider-container">
+    <img class="left-arrow" src="@/assets/icons/arrow.svg" alt="Left Arrow" @click="scrollRight">
+    <section ref="slider" class="popular-dogs-slider">
+      <div class="dog-card" v-for="dog in popularDogs" :key="dog.breed">
+        <img class="dog-category-image" :src="dog.imgSrc" alt="Dog Image">
+        <div class="overlay" @click="handlePopularBreedClick(dog.breed)">
+          <span>
+            {{ dog.breed }}
+          </span>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <img class="right-arrow" src="@/assets/icons/arrow.svg" alt="Right Arrow" @click="scrollLeft">
+  </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useBreedStore } from '@/store/breedStore';
 
+const slider = ref(null);
 const router = useRouter();
 const breedStore = useBreedStore();
 
@@ -41,6 +47,14 @@ const popularDogs = [
   },
 ];
 
+function scrollLeft() {
+  slider.value.scrollLeft += 300;
+}
+
+function scrollRight() {
+  slider.value.scrollLeft -= 300;
+}
+
 function handlePopularBreedClick(dogBreed) {
   breedStore.searchInput = dogBreed;
   console.log(breedStore.searchInput)
@@ -55,6 +69,21 @@ function handlePopularBreedClick(dogBreed) {
 </script>
 
 <style scoped>
+.popular-dogs-slider-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.left-arrow, .right-arrow {
+  width: 32px;
+  cursor: pointer;
+}
+
+.right-arrow {
+  transform: rotate(180deg);
+}
+
 .popular-dogs-slider {
   padding: 8px 0;
   display: flex;
@@ -64,6 +93,8 @@ function handlePopularBreedClick(dogBreed) {
   -ms-overflow-style: none;
   /*For Firefox*/
   scrollbar-width:none;
+  position: relative;
+  scroll-behavior: smooth;
 }
 
 /*For Chrome, Opera*/
