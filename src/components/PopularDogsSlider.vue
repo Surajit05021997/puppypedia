@@ -76,8 +76,16 @@ function handlePopularBreedClick(dogBreed) {
 }
 
 .left-arrow, .right-arrow {
-  width: 32px;
+  width: 48px;
   cursor: pointer;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+  filter: invert(69%) sepia(65%) saturate(584%) hue-rotate(208deg) brightness(83%) contrast(84%);
+}
+
+.left-arrow:active, .right-arrow:active {
+  filter: initial;
 }
 
 .right-arrow {

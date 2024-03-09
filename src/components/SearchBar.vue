@@ -53,6 +53,14 @@ function handleBreedSearch() {
   cursor: pointer;
 }
 
+.search-icon-container:hover {
+  background-color: var(--clr-primary-800);
+}
+
+.search-icon-container:active {
+  background-color: var(--clr-primary-900);
+}
+
 .seach-icon {
   width: 2rem;
   height: 3rem;

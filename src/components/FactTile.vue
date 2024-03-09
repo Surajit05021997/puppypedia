@@ -59,6 +59,12 @@ button:hover {
   border: 2px solid var(--clr-primary-800);
 }
 
+button:active {
+  background-color: var(--clr-primary-600);
+  color: var(--clr-primary-900);
+  border: 2px solid var(--clr-primary-600);
+}
+
 li {
   list-style: none;
   display: flex;
