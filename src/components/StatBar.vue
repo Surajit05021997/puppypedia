@@ -82,24 +82,28 @@ function toogleInfoBox() {
   height: 16px;
   display: flex;
   border-radius: 24px;
-  border: 2px solid var(--clr-neutral-900);
+  border: 2px solid var(--clr-primary-600);
 }
 
 .slider-bar {
   width: 20%;
   background-color: var(--clr-primary-600);
-  border: 2px solid var(--clr-neutral-900);
+  border-left: 2px solid var(--clr-neutral-900);
+  border-right: 2px solid var(--clr-neutral-900);
 }
 
 .slider-bar:first-child {
+  border-left: 0px;
   border-radius: 24px 0 0 24px;
 }
 
 .slider-bar:last-child {
+  border-right: 0px;
   border-radius: 0 24px 24px 0;
 }
 
 .slider-bar:only-child {
   border-radius: 24px;
+  border: 0px;
 }
 </style>

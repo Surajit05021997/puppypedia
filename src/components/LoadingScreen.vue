@@ -6,10 +6,10 @@
 
 <style scoped>
 .loading-overlay {
-  height: calc(100vh - 96px);
+  height: calc(100vh - 152px);
   width: 100vw;
   position: fixed;
-  bottom: 0;
+  top: 96px;
   left: 0;
   background-color: var(--clr-neutral-900);
   opacity: 0.85;

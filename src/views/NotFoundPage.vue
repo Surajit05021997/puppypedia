@@ -7,7 +7,7 @@
 
 <style scoped>
 .not-found-container {
-  height: calc(100vh - 128px);
+  height: calc(100vh - 184px);
   display: flex;
   flex-direction: column;
   justify-content: center;
