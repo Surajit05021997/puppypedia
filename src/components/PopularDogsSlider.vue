@@ -1,6 +1,6 @@
 <template>
   <div class="popular-dogs-slider-container">
-    <img class="left-arrow" src="@/assets/icons/arrow.svg" alt="Left Arrow" @click="scrollRight">
+    <img class="left-arrow show" src="@/assets/icons/arrow.svg" alt="Left Arrow" @click="scrollRight">
     <section ref="slider" class="popular-dogs-slider">
       <div class="dog-card" v-for="dog in popularDogs" :key="dog.breed">
         <img class="dog-category-image" :src="dog.imgSrc" alt="Dog Image">
@@ -11,7 +11,7 @@
         </div>
       </div>
     </section>
-    <img class="right-arrow" src="@/assets/icons/arrow.svg" alt="Right Arrow" @click="scrollLeft">
+    <img class="right-arrow show" src="@/assets/icons/arrow.svg" alt="Right Arrow" @click="scrollLeft">
   </div>
 </template>
 
@@ -78,6 +78,7 @@ function handlePopularBreedClick(dogBreed) {
 .left-arrow, .right-arrow {
   width: 48px;
   cursor: pointer;
+  display: none;
 }
 
 .left-arrow:hover, .right-arrow:hover {
@@ -111,7 +112,7 @@ function handlePopularBreedClick(dogBreed) {
 }
 
 .dog-card {
-  width: 350px;
+  width: 250px;
   flex-shrink: 0;
   position: relative;
 }
@@ -140,5 +141,17 @@ function handlePopularBreedClick(dogBreed) {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .left-arrow.show, .right-arrow.show{
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dog-card {
+    width: 350px;
+  }
 }
 </style>
