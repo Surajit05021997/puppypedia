@@ -1,3 +1,3 @@
 <template>
-  <p>About Us</p>
+  <p>Welcome to Puppypedia – Your Ultimate Canine Compendium! Dive into a world where curiosity meets cuteness as we unveil a treasure trove of delightful dog facts, heartwarming stories, and expert insights. Whether you're a seasoned pup parent or a curious canine enthusiast, join us on this tail-wagging adventure as we celebrate the extraordinary world of man's best friend. Unleash the joy of knowledge and puppy love at Puppypedia – Where Every Woof Has a Tale!</p>
 </template>

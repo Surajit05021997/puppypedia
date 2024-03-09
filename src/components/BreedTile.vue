@@ -15,7 +15,6 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
 import StatBar from '@/components/StatBar.vue';
 
 const props = defineProps({
@@ -32,17 +31,19 @@ const props = defineProps({
   background-color: var(--clr-primary-900);
   padding: 16px;
   display: flex;
+  flex-direction: column;
   gap: 24px;
-  align-items: start;
+  align-items: center;
 }
 
 .stats-container {
   flex-grow: 1;
+  width: 100%;
 }
 
 .breed-image {
   border-radius: 8px;
-  height: 20rem;
+  max-height: 20rem;
 }
 
 .breed-name {
@@ -55,5 +56,11 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .breed-tile {
+    flex-direction: row;
+  }
 }
 </style>

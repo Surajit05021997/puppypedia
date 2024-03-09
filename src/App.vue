@@ -11,8 +11,20 @@ import AppHeader from '@/components/AppHeader.vue';
 
 <style scoped>
 .container {
-  padding: 16px 24px;
+  padding: 16px 8px;
   /*100vh-header height*/
   min-height: calc(100vh - 96px);
+}
+
+@media (min-width: 480px) {
+  .container {
+    padding: 16px 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 16px 24px;
+  }
 }
 </style>

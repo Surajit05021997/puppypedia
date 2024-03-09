@@ -25,7 +25,7 @@ function handleBreedSearch() {
 <style scoped>
 .search-container {
   position: relative;
-  width: 500px;
+  max-width: 500px;
 }
 
 .search-bar {
