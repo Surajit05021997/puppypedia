@@ -8,13 +8,21 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+import { useBreedStore } from '@/store/breedStore';
 import SearchBar from '@/components/SearchBar.vue';
 import BreedTile from '@/components/BreedTile.vue';
 import LoadingScreen from '@/components/LoadingScreen.vue';
-import { useBreedStore } from '@/store/breedStore';
 
-
+const route = useRoute();
 const breedStore = useBreedStore();
+
+onMounted(() => {
+  if(route.query.breedName) {
+    breedStore.getBreedDetailsAction(route.query.breedName);
+  }
+});
 </script>
 
 <style scoped>

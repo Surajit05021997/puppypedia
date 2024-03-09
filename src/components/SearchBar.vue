@@ -9,15 +9,22 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import  { useBreedStore } from '@/store/breedStore.js';
 
 let searchInput = ref('');
 
+const router = useRouter();
 const breedStore = useBreedStore();
 
 function handleBreedSearch() {
   if(searchInput.value) {
+    breedStore.searchInput = searchInput.value;
     breedStore.getBreedDetailsAction(searchInput.value);
+    router.replace({
+      path: '/breeds', 
+      query: { breedName: searchInput.value },
+    });
   }
 }
 </script>

@@ -42,8 +42,15 @@ const popularDogs = [
 ];
 
 function handlePopularBreedClick(dogBreed) {
+  breedStore.searchInput = dogBreed;
+  console.log(breedStore.searchInput)
   breedStore.getBreedDetailsAction(dogBreed);
-  router.push('/breeds');
+  router.push({
+    name: 'breeds',
+    query: {
+      breedName: dogBreed,
+    }
+  });
 }
 </script>
 

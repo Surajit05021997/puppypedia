@@ -6,6 +6,7 @@ import {
 const useBreedStore = defineStore('breed', {
   state: () => ({
     subBreedList: null,
+    searchInput: '',
     isBreedLoading: false,
     breedError: null,
   }),
