@@ -24,16 +24,12 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import AppLogo from './AppLogo.vue';
 import AppNavbar from './AppNavbar.vue';
 
 let expandedMenu = ref({
   'expanded-menu': false,
-});
-
-const burgerMenuIconSrc = computed(() => {
-  return expandedMenu.value['expanded-menu'] ? '@/assets/icons/cross.svg' : '@/assets/icons/burger-menu.svg';
 });
 
 const toggleMenu = function() {

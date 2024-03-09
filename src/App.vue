@@ -3,17 +3,19 @@
   <div id="main" class="container">
     <router-view></router-view>
   </div>
+  <AppFooter />
 </template>
 
 <script setup>
 import AppHeader from '@/components/AppHeader.vue';
+import AppFooter from '@/components/AppFooter.vue';
 </script>
 
 <style scoped>
 .container {
   padding: 16px 8px;
   /*100vh-header height*/
-  min-height: calc(100vh - 96px);
+  min-height: calc(100vh - 152px);
 }
 
 @media (min-width: 480px) {

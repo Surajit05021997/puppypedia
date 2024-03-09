@@ -7,7 +7,7 @@
 
 <style scoped>
 section{
-  min-height: calc(100vh - 128px);
+  min-height: calc(100vh - 184px);
   display: flex;
   flex-direction: column;
   justify-content: center;
