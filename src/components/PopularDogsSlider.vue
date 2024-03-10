@@ -27,23 +27,23 @@ const breedStore = useBreedStore();
 const popularDogs = [
   {
     breed: 'Labrador Retriever',
-    imgSrc: 'src/assets/images/labrador-retriever.jpg'
+    imgSrc: '@/assets/images/labrador-retriever.jpg'
   },
   {
     breed: 'German Shepherd',
-    imgSrc: 'src/assets/images/german-shepherd.jpg'
+    imgSrc: '@/assets/images/german-shepherd.jpg'
   },
   {
     breed: 'Golden Retriever',
-    imgSrc: 'src/assets/images/golden-retriever.jpg'
+    imgSrc: '@/assets/images/golden-retriever.jpg'
   },
   {
     breed: 'Bulldog',
-    imgSrc: 'src/assets/images/bulldog.jpg'
+    imgSrc: '@/assets/images/bulldog.jpg'
   },
   {
     breed: 'Beagle',
-    imgSrc: 'src/assets/images/beagle.jpg'
+    imgSrc: '@/assets/images/beagle.jpg'
   },
 ];
 
