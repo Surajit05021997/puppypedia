@@ -63,7 +63,6 @@ function scrollRight() {
 
 function handlePopularBreedClick(dogBreed) {
   breedStore.searchInput = dogBreed;
-  console.log(breedStore.searchInput)
   breedStore.getBreedDetailsAction(dogBreed);
   router.push({
     name: 'breeds',

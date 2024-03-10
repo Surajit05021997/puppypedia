@@ -16,7 +16,6 @@ const useBreedStore = defineStore('breed', {
         this.isBreedLoading = true;
         const response = await getBreedDetailsService(breedName);
         this.subBreedList = response.data;
-        console.log(this.subBreedList);
       } catch(error) {
         this.breedError = error;
       } finally {
