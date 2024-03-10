@@ -3,7 +3,7 @@
     <img class="left-arrow show" src="@/assets/icons/arrow.svg" alt="Left Arrow" @click="scrollRight">
     <section ref="slider" class="popular-dogs-slider">
       <div class="dog-card" v-for="dog in popularDogs" :key="dog.breed">
-        <img class="dog-category-image" :src="dog.imgSrc" alt="Dog Image">
+        <img class="dog-category-image" :src="images[`${dog.imgSrc}`]" alt="Dog Image">
         <div class="overlay" @click="handlePopularBreedClick(dog.breed)">
           <span>
             {{ dog.breed }}
@@ -19,6 +19,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useBreedStore } from '@/store/breedStore';
+import { filename } from 'pathe/utils';
 
 const slider = ref(null);
 const router = useRouter();
@@ -27,25 +28,30 @@ const breedStore = useBreedStore();
 const popularDogs = [
   {
     breed: 'Labrador Retriever',
-    imgSrc: '@/assets/images/labrador-retriever.jpg'
+    imgSrc: 'labrador-retriever'
   },
   {
     breed: 'German Shepherd',
-    imgSrc: '@/assets/images/german-shepherd.jpg'
+    imgSrc: 'german-shepherd'
   },
   {
     breed: 'Golden Retriever',
-    imgSrc: '@/assets/images/golden-retriever.jpg'
+    imgSrc: 'golden-retriever'
   },
   {
     breed: 'Bulldog',
-    imgSrc: '@/assets/images/bulldog.jpg'
+    imgSrc: 'bulldog'
   },
   {
     breed: 'Beagle',
-    imgSrc: '@/assets/images/beagle.jpg'
+    imgSrc: 'beagle'
   },
 ];
+
+const glob = import.meta.glob('@/assets/images/popular_dogs/*.jpg', { eager: true })
+const images = Object.fromEntries(
+  Object.entries(glob).map(([key, value]) => [filename(key), value.default])
+);
 
 function scrollLeft() {
   slider.value.scrollLeft += 300;

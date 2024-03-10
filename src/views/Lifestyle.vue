@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1>Under Construction</h1>
-    <img src="../../src/assets/images/site-under-construction.png" alt="Site Under Construction Image">
+    <img src="@/assets/images/site-under-construction.png" alt="Site Under Construction Image">
   </section>
 </template>
 
